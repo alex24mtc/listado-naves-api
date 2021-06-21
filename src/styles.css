@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+* { box-sizing: border-box; }
+
+h1{
+    color:#dddddd;
+    text-align: center;
+    padding: 30px 0 0 0;
+    font-size:5rem;
+    
+}
+
+h2{
+    color:#dddddd;
+    font-size:2.5rem;
+}
+html{
+    background-image:url('/assets/img/background-web.jpg');
+    height:100vh;
+    
+    background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
+    -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+    -moz-background-size: cover; /* optional for Firefox 3.6 */ 
+    -o-background-size: cover; /* for Opera 9.5 */
+    margin: 0; /* to remove the default white margin*/
+    padding: 0; /* to remove the default white margin*/
+    
+    font-size:10px;
+    font-family:Helvetica, Arial, sans-serif ;
+    
+    
+    
+}
+
+
+p{
+    font-size:1.8rem;
+    color:#dddddd;
+}
+
+section{
+    font-size:1.8rem;
+    color:#dddddd;
+}

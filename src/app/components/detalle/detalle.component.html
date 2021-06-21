@@ -1,4 +1,44 @@
-<p>detalle works!</p>
+<div *ngFor="let starship of starships">
+    <body>
+    
+        <main>
+    
+            <section>
+                <h2>{{starship.name}}</h2>
+            </section>
+    
+            <section>
+                <p><b>Model:</b> {{starship.model}}</p>
+            </section>
+    
+            <section>
+                <p><b>Manufacturer:</b> {{starship.manufacturer}}</p>
+            </section>
+    
+            <section>
+                <p><b>Crew:</b> {{starship.crew}} persons</p>
+                
+            </section>
+    
+    
+    
+    
+        </main>
+    
+    </body>
+    
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
 
 
 <button routerLink="/listado">Listado</button>

@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ListadoComponent
   },
   {
-    path:'detalle',
+    path:'listado/:id',
     component: DetalleComponent
   }, 
     

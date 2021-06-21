@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
+    RouterModule
     
   ],
   providers: [],
