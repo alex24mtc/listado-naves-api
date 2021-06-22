@@ -8,6 +8,7 @@ import { DetalleComponent } from './components/detalle/detalle.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    InfiniteScrollModule
     
   ],
   providers: [],

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { DetailStarship } from 'src/app/interfaces/detail-starship';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { StarshipsService } from 'src/app/services/starships.service';
+
 
 @Component({
   selector: 'app-detalle',
@@ -10,58 +11,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DetalleComponent implements OnInit {
 
-
   
-  starships:string[]=[];
-  starship:DetailStarship;
+  starships:any;
 
-  constructor(private httpClient:HttpClient, private router:RouterModule) { }
+  constructor(
+    private httpClient:HttpClient, 
+    private router:RouterModule,
+    private route:ActivatedRoute,
+    private starshipsService:StarshipsService) { }
 
-  ngOnInit(): void {
-    this.getData();
-  }
-
-
-
-
-  getData(){
-    const urls = [
-      'http://swapi.dev/api/starships/2',
-      'http://swapi.dev/api/starships/3',
-      'https://swapi.dev/api/starships/5/',
-      'https://swapi.dev/api/starships/9/',
-      'https://swapi.dev/api/starships/10/',
-      'https://swapi.dev/api/starships/11/',
-      'https://swapi.dev/api/starships/12/',
-      'https://swapi.dev/api/starships/13/',
-      'https://swapi.dev/api/starships/15/',
-      'https://swapi.dev/api/starships/17/'
-     
-
-    ];
-
-  
-    
-    (async () => {
+    ngOnInit(): void {
       
-      try {
-        const allResponses = await Promise.all(
-          urls.map(url => fetch(url).then(res => res.json()))
-        );
-        console.log(allResponses[0]);
-
-        this.starships=allResponses;
-        /*
-        document.write(allResponses[0].name,
-          
-          );
-        */
-        
-      } catch(e) {
-        console.log(e);
-        // handle errors
-      }
-    })();
-  }
-
+      this.getStarship();
+    }
+    
+    getStarship(){
+      const name= String(this.route.snapshot.paramMap.get('id'));
+      this.starships=this.starshipsService.getStarShipByName(name);
+      console.log(this.starships);
+    }
+    
+  
+  
 }
