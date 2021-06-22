@@ -11,34 +11,32 @@ import { StarshipsService } from 'src/app/services/starships.service';
 })
 export class ListadoComponent implements OnInit {
 
-  starships:any;
-  
+  starships:any=[];
 
-
-
-  constructor(private router:RouterModule,
-                private starshipsService:StarshipsService){ }
-
-  
+  constructor(private router: RouterModule,
+    private starshipsService: StarshipsService) { }
 
   ngOnInit(): void {
-    
+    this.getData();
+  }
+
+  getData(){
     this.starshipsService.getData().subscribe(
-      response=>{
-        let res:any;
-        res=response; //recolectar respuesta de la api en esta variable
-        this.starships=res.results; //accede al array results, y lo guarda en starships
-        this.starshipsService.starships=res.results; //guardo los datos al servicio
+      response => {
+        let res: any;
+        res = response; //recolectar respuesta de la api en esta variable
+        this.starships = [...this.starships,...res.results]; //el split operator puedes mergear dos arrays
+        this.starshipsService.starships = this.starships; //guardo los datos al servicio
       },
-      error=>{
+      error => {
         console.log('error');
       }
 
     )
 
-
   }
 
+  
 
 
 

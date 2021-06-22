@@ -35,3 +35,10 @@ section {
     background: #282727;
     border: 1px solid #000;
 }
+
+
+.boton-volver-listado{
+    width:100px;
+    margin-left: 30px;
+    
+}

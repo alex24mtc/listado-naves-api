@@ -11,7 +11,6 @@ import { StarshipsService } from 'src/app/services/starships.service';
 })
 export class DetalleComponent implements OnInit {
 
-  
   starships:any;
 
   constructor(
@@ -31,6 +30,4 @@ export class DetalleComponent implements OnInit {
       console.log(this.starships);
     }
     
-  
-  
 }

@@ -7,26 +7,20 @@ import { RouterModule } from '@angular/router';
 })
 export class StarshipsService {
 
-    
-  starships:any;
-  url:any;
-  
+  starships: any;
+  url: any;
+  page: number = 0;
 
-  constructor(private http:HttpClient, private router:RouterModule) { 
-    this.url='http://swapi.dev/api/';
+  constructor(private http: HttpClient, private router: RouterModule) {
+    this.url = 'http://swapi.dev/api/';
   }
 
-  getData(){
-    
-   //return this.http.get('http://swapi.dev/api/starships/')
-   return this.http.get(this.url+'starships/');
-    
-    }
-
-    getStarShipByName(name:string):any{
-      this.starships.find((element:any)=>element.name===name);
-    
-    }
-
-  
+  getData() {
+    this.page+=1;
+    //return this.http.get('http://swapi.dev/api/starships/')
+    return this.http.get(this.url + 'starships/?page=' + this.page);
+  }
+  getStarShipByName(name: string): any {
+    return this.starships.find((element: any) => element.name === name);
+  }
 }
